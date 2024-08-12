@@ -25,3 +25,14 @@ WHERE Country = "United States"
 ORDER BY population DESC
 LIMIT 2
 OFFSET 2;'''
+
+
+#Review 2
+##1. Find the number of movies each director has directed
+'''   SELECT Director, Count(Director) FROM movies
+GROUP BY Director;'''
+
+##2. Find the total domestic and international sales that can be attributed to each director
+'''SELECT Director, SUM(b.Domestic_Sales + b.International_sales) Total_Sales FROM MOVIES a
+ LEFT JOIN boxoffice b
+ON a.id = b.movie_id'''
